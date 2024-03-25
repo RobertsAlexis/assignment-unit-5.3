@@ -54,7 +54,18 @@ console.log(showCollection(myCollection));
 // Loop through the collection and console.log each album's information formatted within a single string, like: TITLE by ARTIST, published in YEARPUBLISHED.
 // Test the showCollection function.
 
+const findByArtist = (collection, artist) => {
+  let matches = [];
+  for (let album of collection) {
+    if (album.artist === artist) {
+      matches.push(album);
+    }
+  }
+  return matches;
+};
 
+let test = findByArtist(myCollection, 'The Beatles');
+console.log(test);
 // Add a function named findByArtist. This function should:
 // Take in a collection parameter. Remember, we want to be able to search any collection!
 // Take in an artist (string) parameter.
